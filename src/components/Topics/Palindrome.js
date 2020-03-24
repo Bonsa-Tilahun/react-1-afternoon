@@ -18,7 +18,7 @@ class Palindrome extends Component{
     handleClick(){
         let palinValue = this.state.userInput.toLowerCase() === this.state.userInput.split('').reverse().join('').toLowerCase()
         this.setState({
-            palindrome: palinValue
+            palindrome: palinValue? 'true' : 'false'
         })
     }
     render(){
@@ -28,7 +28,7 @@ class Palindrome extends Component{
                 <h4>Palindrome</h4>
                 <input onChange={e => this.handleChange(e)} className="inputLine" type="text"/>
                 <button onClick={()=> this.handleClick()} className="confirmationButton">Filter</button>
-                <span className="resultsBox">Palindrome: {this.state.palindrome? "true":"false"}</span>
+                <span className="resultsBox">Palindrome: {this.state.palindrome}</span>
             </div>
         )
     }
